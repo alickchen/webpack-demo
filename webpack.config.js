@@ -15,12 +15,16 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',//在webpack的module部分的loaders里进行配置即可
-                query: {
-                    presets: ['es2015','react']
-                }
+            },
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader?modules'//添加对样式表的处理
             }
         ]
     },
+    plugins: [
+        new webpack.BannerPlugin("这是我的代码!")//在这个数组中new一个就可以了
+    ],
 
     devServer: {
         contentBase: "./public",//本地服务器所加载的页面所在的目录
