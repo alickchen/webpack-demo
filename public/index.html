@@ -1,13 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Webpack Sample project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content="Aiism旗下的在线图片艺术处理工具，其精心打造的深层艺术滤镜，使图片变得更加精致、个性和艺术范。在线操作，简单易用，快速生成，让您秒变画家、化身艺术家。" />
+    <meta name="keywords" content="在线图片处理工具，图片艺术化处理软件"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>Aiism-人工智能艺术处理</title>
+    <link type="text/css" rel="stylesheet" href="./bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="./drawingboard.min.css"/>
 </head>
 <body>
-<div id="root">
 
+<div class="loading-bg">
+    <div class="loading"><img src="image/loading.png"><small>服务器正在为您处理,请稍后。。。</small></div>
 </div>
-<script src="bundle.js"></script>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 yuantu text-center">
+            <h1>原图:</h1>
+            <input class="center-block" type="file"  id="inputImage1" name="file" accept="image/*">
+            <div  class="pull-right tupian1">
+                <img class="image1 img-responsive  center-block">
+                <div id="huaban1" class="huaban1"></div>
+            </div>
+
+        </div>
+        <div class="col-sm-6 fenggetu text-center">
+            <h1>风格:</h1>
+            <input class="center-block" type="file"  id="inputImage2" name="file" accept="image/*">
+            <div  class="pull-left tupian2">
+                <img class="image2 img-responsive  center-block" >
+                <div id="huaban2" class="huaban2"></div>
+            </div>
+        </div>
+        <div class="col-sm-12" style="margin: 20px">
+            <div class="center-block" style="width: 184px">
+                <button class="btn btn-primary btn-lg  hecheng">合成</button>
+            </div>
+        </div>
+        <div class="col-sm-12" >
+            <img class="result-img img-responsive img-thumbnail center-block" >
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="myModalLabel">生成结果:</h2>
+            </div>
+            <div class="modal-body">
+                <img class="result-img img-responsive img-thumbnail center-block" >
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./bootstrap.min.js"></script>
+<script type="text/javascript" src="./drawingboard.min.js"></script>
+<script src="main.min.js"></script>
 </body>
 </html>

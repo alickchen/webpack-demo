@@ -1,0 +1,91 @@
+@keyframes spin
+{
+  0%   {transform:rotate(0deg); opacity: 1;}
+  50%   {transform:rotate(180deg); opacity: 0.3;}
+  100% {transform:rotate(360deg); opacity: 1;}
+}
+@-webkit-keyframes spin /* Safari 和 Chrome */
+{
+  0% {
+    -webkit-transform: rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    opacity: 0.3;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+.loading-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background: rgba(255,255,255,0.5);
+  display: none;
+  .loading {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    img {
+      position: relative;
+      top: -80px;
+      width: 100%;
+      animation: spin 1.5s linear infinite;
+      -webkit-animation: spin 1.5s linear infinite;
+    }
+    small {
+      font-size: 14px;
+      position: absolute;
+      top: 0;
+      left: -70px;
+      width: 200px;
+      display: inline-block;
+      color: #666;
+      white-space:nowrap;
+    }
+  }
+}
+.tupian1 {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin-top: 50px;
+}
+.tupian2 {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin-top: 50px;
+}
+#huaban1, #huaban2{
+  width: 600px;
+  height: 600px;
+}
+#huaban1 {
+  position: absolute;
+  top: -34px;
+  .drawing-board-canvas-wrapper {
+  }
+}
+#huaban2 {
+  position: absolute;
+  top: -34px;
+  .drawing-board-canvas-wrapper {
+  }
+}
+.image1,.image2 {
+  max-width: 600px;
+  max-height: 600px;
+  opacity: 0;
+}
