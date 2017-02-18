@@ -4,6 +4,8 @@
 import './masktest.less'
 var $ = require('jquery');
 
+
+
 $(function () {
     var $loadingbg = $(".loading-bg");
     var image1,image2,myBoard2,myBoard1;

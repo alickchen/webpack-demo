@@ -1,4 +1,6 @@
 var webpack = require("webpack");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     devtool: 'eval-source-map',//配置生成Source Maps，选择合适的选项
     entry:  __dirname + "/app/main.js",//已多次提及的唯一入口文件
@@ -29,7 +31,11 @@ module.exports = {
     },
 
     plugins:[
-        new webpack.BannerPlugin("这是我的代码!")//在这个数组中new一个就可以了
+        new webpack.BannerPlugin("这是我的代码!"),//在这个数组中new一个就可以了
+        new HtmlWebpackPlugin({
+            template: __dirname + "/app/index.tmpl.html"//new 一个这个插件的实例，并传入相关的参数
+        }),
+        new webpack.optimize.UglifyJsPlugin(),
     ],
     externals: {
         jquery: 'window.$'
